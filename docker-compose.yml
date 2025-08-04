@@ -1,0 +1,12 @@
+services:
+  actualhomelessstop:
+    image: actualhomelessstop
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      platforms:
+        - linux/amd64
+      # args:
+      #   ENV_FILE: django.env
+    ports:
+      - 8000:8080

@@ -15,18 +15,30 @@ import os
 import posixpath
 import environ
 
-env = environ.Env(
-    # Set default values and casting
-    DEBUG=(bool, False),
-    CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND=(int, 3600),
-    CHATBOT_RATE_LIMIT=(int, 0),
-    ALLOWED_HOSTS=[]
-)
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
+env = environ.Env(
+    # Set default values and casting
+    DEBUG=(bool, False),
+    OPENAI_API_KEY=(str, ''),
+    RECAPTCHA_SECRET_KEY=(str, ''),
+    DJANGO_SECRET_KEY=(str, '19089fc3-0bd5-3551-817a-898328f0c1b3'),
+    # Rate limiting settings
+    CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND=(int, 3600),
+    CHATBOT_RATE_LIMIT=(int, 0),
+    ALLOWED_HOSTS=[],
+    DATABASE_ENGINE=(str, 'django.db.backends.sqlite3'),
+    DATABASE_NAME=(str, os.path.join(BASE_DIR, 'db.sqlite3')),
+    DATABASE_USER=(str, ''),
+    DATABASE_PASSWORD=(str, ''),
+    DATABASE_HOST=(str, ''),
+    DATABASE_PORT=(str, '')
+)
+
+if os.environ.get("ENV") != "production":
+    # Load environment variables from .env file if not in production
+    environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 
 OPENAI_API_KEY = env("OPENAI_API_KEY")
 
@@ -46,6 +58,8 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND = env("CHATBOT_RATE_LIMIT_TIME_WINDOW_SECOND")
 CHATBOT_RATE_LIMIT = env("CHATBOT_RATE_LIMIT")
 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
@@ -62,6 +76,7 @@ INSTALLED_APPS = [
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
 MIDDLEWARE = [   
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -97,8 +112,12 @@ WSGI_APPLICATION = 'ActualHomelessStop.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': env('DATABASE_ENGINE'),
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
 

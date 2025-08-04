@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "docker-build",
+			"label": "docker-build",
+			"platform": "python",
+			"dockerBuild": {
+				"tag": "actualhomelessstop:latest",
+				"dockerfile": "${workspaceFolder}/Dockerfile",
+				"context": "${workspaceFolder}",
+				"args": {
+					"ENV_FILE": "django.env"
+				},
+				"pull": true
+			}
+		},
+		{
+			"type": "docker-run",
+			"label": "docker-run: debug",
+			"dependsOn": [
+				"docker-build"
+			],
+			"python": {
+				"args": [
+					"runserver",
+					"0.0.0.0:8080",
+					"--nothreading",
+					"--noreload"
+				],
+				"file": "ActualHomelessStop/manage.py"
+			}
+		}
+	]
+}
