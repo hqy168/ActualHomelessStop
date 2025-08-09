@@ -1,6 +1,18 @@
 {
     "configurations": [
         {
+            "name": "Python Debugger: Django",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "program": "${workspaceFolder}/ActualHomelessStop/manage.py",
+            "python": "/Users/charlie/miniconda3/envs/appchlg/bin/python"
+        },
+        {
             "name": "Containers: Python - Django",
             "type": "docker",
             "request": "launch",
@@ -14,6 +26,7 @@
                 ],
                 "projectType": "django"
             }
-        }
+        },
+        {}
     ]
 }

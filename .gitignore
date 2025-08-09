@@ -368,3 +368,6 @@ AcutualHomelessStop/env
 
 django.env
 django.dev.env
+
+static
+Users
