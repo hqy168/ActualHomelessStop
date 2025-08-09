@@ -45,8 +45,10 @@ urlpatterns = [
     path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     path('password_change_done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     path('register/', views.register, name='register'),
-
+    path('blog', views.blog, name='blog'),
+    path('bp1',views.bp1, name='bp1'),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

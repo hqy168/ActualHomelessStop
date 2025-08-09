@@ -63,5 +63,12 @@ class Profile(models.Model):
     def str(self):
         return self.user.username
 
+class Post(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
+    link = models.CharField(max_length=1000,blank=True)
+    def __str__(self):
+        return f"{self.name}"
+
 
 

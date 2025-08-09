@@ -76,6 +76,8 @@
     <Content Include="app\templates\app\nonprofitdetails.html" />
     <Content Include="app\templates\app\nonprofitlist.html" />
     <Content Include="app\templates\app\eventdetails.html" />
+    <Content Include="app\templates\app\blog.html" />
+    <Content Include="app\templates\app\bp1.html" />
     <Content Include="db.sqlite3" />
     <Content Include="nonprofitlist.csv" />
     <Content Include="nonprofitlist.pdf" />

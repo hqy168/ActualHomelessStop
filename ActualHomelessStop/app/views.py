@@ -20,6 +20,7 @@ from django.conf import settings
 
 from app.models import Nonprofit
 from app.models import Event
+from app.models import Post
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -62,6 +63,33 @@ def about(request):
         }
     )
 
+def blog(request):
+    """Renders the blog page."""
+    assert isinstance(request, HttpRequest)
+    posts = Post.objects.all()
+    return render(
+        request,
+        'app/blog.html',
+        {
+            'title':'Fresh updates from the Homeless Stop Team',
+            'message':'Our application description page.',
+            'year':datetime.now().year,
+            'posts': posts,
+        }
+    )
+
+def bp1(request):
+    """Renders the blog page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/bp1.html',
+        {
+            'title':'Fresh updates from the Homeless Stop Team',
+            'message':'Our application description page.',
+            'year':datetime.now().year,
+        }
+    )
 def nonprofitlist(request):
     """Renders the nonprofit list page."""
     assert isinstance(request, HttpRequest)
