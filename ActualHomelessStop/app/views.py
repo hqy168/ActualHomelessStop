@@ -90,6 +90,20 @@ def bp1(request):
             'year':datetime.now().year,
         }
     )
+
+def bp2(request):
+    """Renders the blog page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/bp2.html',
+        {
+            'title':'Fresh updates from the Homeless Stop Team',
+            'message':'Our application description page.',
+            'year':datetime.now().year,
+        }
+    )
+
 def nonprofitlist(request):
     """Renders the nonprofit list page."""
     assert isinstance(request, HttpRequest)

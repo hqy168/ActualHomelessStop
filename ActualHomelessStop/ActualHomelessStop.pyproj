@@ -71,6 +71,7 @@
     <Content Include=".gitignore" />
     <Content Include="app\service\nonprofitlist.csv" />
     <Content Include="app\static\app\images\logo.png" />
+    <Content Include="app\templates\app\bp2.html" />
     <Content Include="app\templates\app\eventslist.html" />
     <Content Include="app\templates\app\infonotprovided.html" />
     <Content Include="app\templates\app\nonprofitdetails.html" />

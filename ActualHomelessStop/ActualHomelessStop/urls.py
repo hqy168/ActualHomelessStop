@@ -47,6 +47,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('blog', views.blog, name='blog'),
     path('bp1',views.bp1, name='bp1'),
+    path('bp2',views.bp2, name='bp2'),
 ]
 
 
