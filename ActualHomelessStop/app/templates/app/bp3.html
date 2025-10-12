@@ -1,0 +1,38 @@
+{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+<h1> Homeless Stop is back at Feed My Starving Children!</h1>
+<h3> Learn more about our active participation in the fight for those less fortunate.</h3>
+<h4> Follow us as we work to stop homelessness and help those in need, one step at a time</h4>
+
+<body>
+    <p>
+        On October 10th, Homeless stop partnered with The 8 Foundation to pack meals for those less fortunate at Feed My Starving Children. Together, we packed over 60 boxes and, together with the rest of the session, fed 
+        148 kids 3 meals a day for a whole year.
+    </p>
+    <br />
+    <p>
+        A big thank you to everyone who participated!
+
+    </p>
+    <br />
+    <p>
+       Every four seconds, a person dies of hunger. Starvation malnutrition remains a worldwide problem impacting billions of people aroung the globe. You can make an impact by volunteering at organizations such as Feed My Starving Children or by donating to them.
+    </p>
+    <div class="row justify-content-center mb-5">
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app\images\FMSC-OCT10-1.jpg' %}" alt="About Us" sizes="100px">
+        </div>
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app\images\FMSC-OCT10-2.jpg' %}" alt="About Us" sizes="100px">
+        </div>
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app\images\FMSC-OCT10-3.jpg' %}" alt="About Us" sizes="100px">
+        </div>
+
+    </div>
+
+
+</body>
+
+{% endblock %}
