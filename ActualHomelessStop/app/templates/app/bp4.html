@@ -1,0 +1,35 @@
+{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+<h1> Homeless Stop at!</h1>
+<h3> Learn more about our active participation in the fight to help those less fortunate.</h3>
+<h4> Follow us as we work to stop homelessness and help those in need, one step at a time</h4>
+
+<body>
+    <p>
+        On November 15th, Homeless Stop partnered with The 8 Foundation to volunteer at Andre House, helping prepare and serve meals to locals in need across Phoenix. 
+        Andre House provides food, shelter, hygiene, and other invalubale services and hopsitality to those in need 6 days a week, year-round. 
+    </p>
+    <br />
+    <p>
+        A big thank you to everyone who participated!
+
+    </p>
+    <br />
+    <p>
+        Over 15,000 people are affected by homelessness in Maricopa Country alone. You can make a positive impact by volunteering at organizations like Andre House and others featured on our site or by donating to them.
+    </p>
+    <div class="row justify-content-center mb-5">
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app\images\andrehouse1.jpg' %}" alt="About Us" sizes="100px">
+        </div>
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app\images\andrehouse2.jpg' %}" alt="About Us" sizes="100px">
+        </div>
+
+    </div>
+
+
+</body>
+
+{% endblock %}
