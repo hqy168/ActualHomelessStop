@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="alert alert-warning">
+<!--<div class="alert alert-warning">
     <h3>Homeless Stop is co-hosting with Keys to Change on Thirst Aid, their summer-long heat relief campaign.</h3>
     <p>Together, we are collecting bottled water and other heat relief items for those who need them most.</p>
     <p>Each summer, thousands of individuals experiencing homelessness rely on Key Campus, a collaborative space where many organizations (including us!) come together to provide life-saving services. During the hottest months, water is essential, but it is not always easy to access.</p>
@@ -11,11 +11,12 @@
     <p>Every donation helps protect lives in the heat; it’s one of the easiest, tangible ways to help.</p>
     <div class="row justify-content-center">
         <div class="col-auto">
-            <img class="img-fluid rounded" src="{% static 'app/images/water_dono_flyer_2.png' %}" alt="About Us" sizes="1000px">
+            <img class="img-fluid rounded" src="{% static 'app/images/andrehouse1.png' %}" alt="About Us" sizes="1000px">
         </div>
 
     </div>
-</div>
+</div>-->
+
 
 <div class="jumbotron">
     <h1>Homeless Stop</h1>
@@ -23,7 +24,20 @@
     <p class="lead">Find a nonprofit near you to contact, donate, volunteer, and more!</p>
     <p><a href="{% url 'nonprofitlist' %}" class="btn btn-primary btn-large">Get Started &raquo;</a></p>
 </div>
+<div class="alert alert-warning">
+    <h3>Read the latest about Homeless Stop on our blog! </h3>
+    <p>Just recently, We volunteered at Andre House in downtown Phoenix, helping prepare and serve meals for individuals in need.</p>
+    <a href="bp4">Read more here</a>
+    <p>Interested in helping out those in need but don't have the time to volunteer? Not a problem!</p>
+    <p>By donating to a nonprofit, you help them keep their programs running, allow them to enable more volunteers, and encourage all of us to keep helping those in need.</p>
+    <p>Every donation helps save lives; it’s one of the easiest, most tangible ways to make a difference.</p>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <img class="img-fluid rounded" src="{% static 'app/images/andrehouse2.jpg' %}" alt="About Us" sizes="500px">
+        </div>
 
+    </div>
+</div>
 <div class="row">
     <div class="col-md-4">
         <h2>Our Story</h2>
