@@ -371,3 +371,4 @@ django.dev.env
 
 static
 Users
+.env
