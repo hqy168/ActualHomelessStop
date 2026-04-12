@@ -1,0 +1,32 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+<h1> Homeless Stop at the Thirst Aid Drive</h1>
+<h3> Learn more about our active participation in the fight for those less fortunate.</h3>
+<h4> Follow us as we work to stop homelessness, one step at a time</h4>
+
+<body>
+    <p>
+        On March 17th, Homeless Stop volunteered at St. Mary's food bank, helping distribute aid packages to those in need and playing an active role in our community.
+    </p>
+    <br />
+    <p>
+       One in every six people in Arizona is affected by food insecurity. Donating to or volunteering at organizations such as St. Mary's Food Bank lets you take an active role in helping your local community. 
+    </p>
+    <div class="row justify-content-center mb-5">
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app/images/foodbank1.jpeg' %}" alt="About Us" sizes="100px">
+        </div>
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app/images/foodbank2.jpeg' %}" alt="About Us" sizes="100px">
+        </div>
+        <div class="col">
+            <img class="img-fluid rounded" src="{% static 'app/images/foodbank3.jpeg' %}" alt="About Us" sizes="100px">
+        </div>
+
+    </div>
+
+
+</body>
+
+{% endblock %}
