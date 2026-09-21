@@ -83,6 +83,7 @@
     <Content Include="app\templates\app\bp3.html" />
     <Content Include="app\templates\app\bp4.html" />
     <Content Include="app\templates\app\bp6.html" />
+    <Content Include="app\templates\app\bp7.html" />
     <Content Include="db.sqlite3" />
     <Content Include="nonprofitlist.csv" />
     <Content Include="nonprofitlist.pdf" />

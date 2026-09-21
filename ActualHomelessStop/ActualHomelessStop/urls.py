@@ -52,6 +52,7 @@ urlpatterns = [
     path('bp4',views.bp4, name='bp4'),
     path('bp5',views.bp5, name='bp5'),
     path('bp6', views.bp6, name='bp6'),
+    path('bp7', views.bp7, name='bp7'),
 ]
 
 
