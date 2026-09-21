@@ -151,6 +151,17 @@ def bp6(request):
             'year':datetime.now().year,
         }
     )
+def bp7(request):
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'app/bp7.html',
+        {
+            'title':'Fresh updates from the Homeless Stop Team',
+            'message':'Our application description page.',
+            'year':datetime.now().year,
+        }
+    )
 
 def nonprofitlist(request):
     """Renders the nonprofit list page."""
